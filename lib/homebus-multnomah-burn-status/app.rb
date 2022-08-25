@@ -16,10 +16,10 @@ class HomebusMultnomahBurnStatus::App < Homebus::App
   end
 
   def setup!
-    @device = Homebus::Device.new(name: county,
+    @device = Homebus::Device.new(name: 'Multnomah County burn status',
                                   manufacturer: "Homebus",
                                   model: 'Burn Status',
-                                  serial_number: county))
+                                  serial_number: 'Multnomah'))
     end
   end
 
@@ -46,27 +46,27 @@ class HomebusMultnomahBurnStatus::App < Homebus::App
   def work!
     results = _scrape
 
-    @devices.each do |device|
+    if results
       payload = {
-        cases: results[device.serial_number] || 0
+        status: results
       }
 
       if @options[:verbose]
-        puts device.serial_number, payload
+        puts payload
       end
 
-      device.publish! DDC, payload
+      @device.publish! DDC, payload
     end
 
     sleep update_interval
   end
 
   def update_interval
-    60 * 60 * 3
+    60 * 60 * 4
   end
 
   def name
-    'Oregon hMPXV Cases'
+    'Multnomah County burn status'
   end
 
   def publishes

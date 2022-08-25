@@ -5,7 +5,7 @@ class HomebusMultnomahBurnStatus::Options < Homebus::Options
   end
 
   def banner
-    'Homebus OHA Monkeypox stats'
+    'Homebus Multnomah County burn status'
   end
 
   def version
@@ -13,6 +13,6 @@ class HomebusMultnomahBurnStatus::Options < Homebus::Options
   end
 
   def name
-    'homebus-oha-monkeypox'
+    'homebus-multnomah-county-burn-status'
   end
 end
