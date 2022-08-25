@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'homebus-multnomah-burn-status/options'
+require 'homebus-multnomah-burn-status/app'
+
+app_options = HomebusMultnomahBurnStatus::Options.new
+
+app = HomebusMultnomahBurnStatus::App.new app_options.options
+app.run!
