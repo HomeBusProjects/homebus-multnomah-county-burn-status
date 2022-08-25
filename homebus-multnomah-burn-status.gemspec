@@ -3,7 +3,7 @@
 require_relative 'lib/homebus-multnomah-burn-status/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'homebus-multnomah-burn-status'
+  spec.name = 'homebus-multnomah-county-burn-status'
   spec.version = HomebusMultnomahBurnStatus::VERSION
   spec.authors = ['John Romkey']
   spec.email = ['58883+romkey@users.noreply.github.com']

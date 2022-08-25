@@ -19,8 +19,7 @@ class HomebusMultnomahBurnStatus::App < Homebus::App
     @device = Homebus::Device.new(name: 'Multnomah County burn status',
                                   manufacturer: "Homebus",
                                   model: 'Burn Status',
-                                  serial_number: 'Multnomah'))
-    end
+                                  serial_number: 'Multnomah')
   end
 
   def _find(spans)
@@ -74,6 +73,6 @@ class HomebusMultnomahBurnStatus::App < Homebus::App
   end
 
   def devices
-    @devices
+    [ @device ]
   end
 end
